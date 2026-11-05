@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drikkene forklaret – Ten Pillars Coffee</title>
+    <link rel="icon" href="img/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300;400;900&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,700;1,6..12,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/menu.js" defer></script>
+  </head>
+  <body class="viden-side">
+    <header class="site-header">
+      <a class="logo" href="index.html"><img src="img/logo.png" alt="Ten Pillars Coffee – til forsiden" width="130" height="133" /></a>
+      <div class="header-right">
+        <nav aria-label="Hovedmenu">
+          <ul class="nav">
+            <li><a href="index.html">Forside</a></li>
+            <li><a href="guides.html">Guides</a></li>
+            <li class="har-undermenu">
+              <details>
+                <summary class="aktiv">Viden</summary>
+                <ul class="undermenu">
+                  <li><a href="viden.html">Oversigt</a></li>
+                  <li><a href="kaffens-historie.html">Kaffens historie</a></li>
+                  <li><a href="boenner.html">Bønner og ristning</a></li>
+                  <li><a href="espresso-kalibrering.html">Espresso og kalibrering</a></li>
+                  <li><a href="maelk-smagning.html">Mælk og smag</a></li>
+                  <li><a href="drikkene.html" aria-current="page">Drikkene forklaret</a></li>
+                </ul>
+              </details>
+            </li>
+            <li><a href="rengoring.html">Rengøring</a></li>
+          </ul>
+        </nav>
+        <div class="header-line"></div>
+      </div>
+    </header>
+
+    <main>
+      <a href="viden.html" class="tilbage">← Viden</a>
+      <h1>Drikkene forklaret</h1>
+      <p class="intro">Næsten alle drikkene består af de samme tre ting: espresso, mælk og mælkeskum. Forskellen ligger i, hvor meget der er af hver, og hvor stor koppen er. Klik på en kop for at se guiden.</p>
+
+      <ul class="forklaring" aria-label="Farveforklaring">
+        <li style="--farve: var(--espresso)">Espresso</li>
+        <li style="--farve: var(--maelk)">Mælk</li>
+        <li style="--farve: var(--skum)">Skum</li>
+        <li style="--farve: var(--vand)">Varmt vand</li>
+      </ul>
+
+      <!-- Lagene står nedefra og op. Ret procenterne i style="--h: …" -->
+      <ul class="kopper" aria-label="Drikke">
+        <li>
+          <a href="espresso.html" class="kop">
+            <div class="kop-glas lille" aria-hidden="true">
+              <div class="lag espresso" style="--h: 45%"></div>
+            </div>
+            <h3>Espresso</h3>
+            <p>Lille og koncentreret</p>
+          </a>
+        </li>
+        <li>
+          <a href="cortardo.html" class="kop">
+            <div class="kop-glas lille" aria-hidden="true">
+              <div class="lag espresso" style="--h: 40%"></div>
+              <div class="lag maelk" style="--h: 40%"></div>
+              <div class="lag skum" style="--h: 8%"></div>
+            </div>
+            <h3>Cortado</h3>
+            <p>Lige dele espresso og mælk</p>
+          </a>
+        </li>
+        <li>
+          <a href="flat-white.html" class="kop">
+            <div class="kop-glas mellem" aria-hidden="true">
+              <div class="lag espresso" style="--h: 35%"></div>
+              <div class="lag maelk" style="--h: 45%"></div>
+              <div class="lag skum" style="--h: 8%"></div>
+            </div>
+            <h3>Flat white</h3>
+            <p>Stærk, tyndt lag mikroskum</p>
+          </a>
+        </li>
+        <li>
+          <a href="cappuccino.html" class="kop">
+            <div class="kop-glas stor" aria-hidden="true">
+              <div class="lag espresso" style="--h: 20%"></div>
+              <div class="lag maelk" style="--h: 38%"></div>
+              <div class="lag skum" style="--h: 32%"></div>
+            </div>
+            <h3>Cappuccino</h3>
+            <p>Stor kop med tykt lag skum</p>
+          </a>
+        </li>
+        <li>
+          <a href="caffe-latte.html" class="kop">
+            <div class="kop-glas stor" aria-hidden="true">
+              <div class="lag espresso" style="--h: 18%"></div>
+              <div class="lag maelk" style="--h: 65%"></div>
+              <div class="lag skum" style="--h: 8%"></div>
+            </div>
+            <h3>Caffe latte</h3>
+            <p>Mild og cremet</p>
+          </a>
+        </li>
+        <li>
+          <a href="americano.html" class="kop">
+            <div class="kop-glas stor" aria-hidden="true">
+              <div class="lag espresso" style="--h: 22%"></div>
+              <div class="lag vand" style="--h: 68%"></div>
+            </div>
+            <h3>Americano</h3>
+            <p>Espresso med varmt vand</p>
+          </a>
+        </li>
+      </ul>
+
+      <h2>Oversigt</h2>
+      <div class="tabel-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Drik</th>
+              <th scope="col">Espresso</th>
+              <th scope="col">Mælk</th>
+              <th scope="col">Skum</th>
+              <th scope="col">Kendetegn</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Espresso</th><td>1 shot</td><td>–</td><td>–</td><td>Lille og koncentreret, med crema</td></tr>
+            <tr><th scope="row">Americano</th><td>1–2 shots</td><td>– (varmt vand)</td><td>–</td><td>Espresso fortyndet med vand, minder om filterkaffe</td></tr>
+            <tr><th scope="row">Cortado</th><td>1–2 shots</td><td>Lige så meget som espresso</td><td>Meget lidt</td><td>Lille, stærk og blød – kaffen er i fokus</td></tr>
+            <tr><th scope="row">Flat white</th><td>2 shots</td><td>Lidt</td><td>Tyndt lag mikroskum</td><td>Stærkere kaffesmag end latte</td></tr>
+            <tr><th scope="row">Cappuccino</th><td>1–2 shots</td><td>Lidt</td><td>Tykt lag skum</td><td>Stor og luftig, med et tykt lag skum ovenpå</td></tr>
+            <tr><th scope="row">Caffe latte</th><td>1–2 shots</td><td>Meget</td><td>Tyndt lag</td><td>Mild og cremet, den største kop</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Mængderne er typiske. Ten Pillars' egne opskrifter står i <a href="guides.html">Guides</a>.</p>
+
+      <h2>Hvilken skal jeg anbefale?</h2>
+      <ul>
+        <li>Kan lide stærk kaffe → espresso eller cortado</li>
+        <li>Vil have noget mildt og cremet → latte</li>
+        <li>Kan lide skum → cappuccino</li>
+        <li>Vil have sort kaffe i en stor kop → americano</li>
+      </ul>
+
+      <nav class="side-nav" aria-label="Forrige side">
+        <a href="maelk-smagning.html">← Forrige: Mælk og smag</a>
+        <a href="viden.html" class="naeste">Tilbage til oversigten →</a>
+      </nav>
+    </main>
+    <footer class="site-footer">
+      <p>Ten Pillars Coffee · Håndbog for frivillige. Er du i tvivl, så spørg en anden frivillig.</p>
+    </footer>
+  </body>
+</html>

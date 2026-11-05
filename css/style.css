@@ -425,6 +425,45 @@ main {
   opacity: 0.85;
 }
 
+.viden-kort {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 40px auto;
+}
+
+.kort {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px;
+  border: 2px solid #4a7356; /* samme grøn som menuknapperne */
+  border-radius: 20px;
+  color: inherit;
+  text-decoration: none;
+  transition:
+    transform 0.15s,
+    background-color 0.15s;
+}
+
+.kort:hover,
+.kort:focus-visible {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+.kort img {
+  width: 48px;
+  height: 48px;
+}
+.kort h3 {
+  margin: 0;
+}
+.kort p {
+  margin: 0;
+}
+
 /* ---------- Footer ---------- */
 
 .site-footer {
@@ -487,3 +526,407 @@ main {
 .back-link:hover {
   text-decoration: underline;
 }
+
+/* ---------- Dropdown under "Viden" ----------
+   Bygget med <details>, så den åbner ved klik og virker på mobil
+   og med tastatur. "Viden" og punkterne i undermenuen har samme
+   stil som de andre knapper i .nav. */
+
+.nav .har-undermenu {
+  position: relative;
+}
+
+.nav summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: clamp(16px, 1.2vw + 8px, 20px);
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  list-style: none; /* fjerner trekanten i Firefox */
+  user-select: none;
+  transition: background-color 0.15s ease;
+}
+
+.nav summary::-webkit-details-marker {
+  display: none; /* fjerner trekanten i Chrome og Safari */
+}
+
+.nav summary:hover,
+.nav details[open] summary {
+  background: var(--primary-hover);
+}
+
+.nav summary:focus-visible {
+  outline: 3px solid var(--white);
+  outline-offset: 3px;
+}
+
+/* Viden er aktiv, når man står på en af vidensiderne */
+.nav summary.aktiv {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Lille pil, der vender når menuen er åben */
+.nav summary::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.15s ease;
+}
+
+.nav details[open] summary::after {
+  transform: translateY(2px) rotate(-135deg);
+}
+
+/* Undermenuen svæver over siden i stedet for at skubbe den ned */
+.undermenu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  margin: 0;
+  padding: 12px;
+  list-style: none;
+  background: var(--background);
+  border: 1px solid var(--dark);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 28px rgba(30, 69, 48, 0.35);
+}
+
+.undermenu li {
+  list-style: none;
+}
+
+.nav .undermenu a {
+  display: block;
+  white-space: nowrap;
+}
+
+/* ---------- Viden-undersider ---------- */
+
+.tilbage {
+  display: inline-flex;
+  margin-bottom: 24px;
+  color: var(--dark);
+  font-family: var(--font-heading);
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.tilbage:hover {
+  text-decoration: underline;
+}
+
+.intro {
+  max-width: 65ch;
+  font-size: 1.1em;
+}
+
+.tidslinje {
+  list-style: none;
+  margin: 32px 0;
+  padding: 0 0 0 28px;
+  border-left: 2px solid var(--dark);
+}
+
+.tidslinje li {
+  position: relative;
+  max-width: 75ch;
+  margin-bottom: 28px;
+}
+
+.tidslinje li::before {
+  content: "";
+  position: absolute;
+  left: -37px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 3px solid var(--background);
+}
+
+.tidslinje .aar {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.3em;
+  color: var(--dark);
+}
+
+.medie-pladsholder {
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  margin: 32px 0;
+  padding: 24px;
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+}
+
+.side-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--dark);
+}
+
+.side-nav a {
+  color: var(--dark);
+  font-family: var(--font-heading);
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.side-nav a:hover {
+  text-decoration: underline;
+}
+
+.side-nav .naeste {
+  margin-left: auto;
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .nav summary {
+    padding: 6px 12px;
+  }
+  /* På mobil folder undermenuen ud i hele menuens bredde */
+  .nav {
+    position: relative;
+  }
+  .nav .har-undermenu {
+    position: static;
+  }
+  .undermenu {
+    left: 0;
+    right: 0;
+  }
+}
+
+/* ---------- Viden-undersider: tabeller, tjeklister, kopper ---------- */
+
+.viden-side h2 {
+  margin-top: 1.4em;
+}
+
+.viden-side .two-col h2 {
+  margin-top: 0;
+}
+
+/* Kun almindelige lister – ikke tjekliste, kopper osv. */
+.viden-side main > ul:not([class]),
+.viden-side main > ol:not([class]) {
+  max-width: 75ch;
+  padding-left: 1.4em;
+}
+
+/* Tabeller */
+.tabel-wrap {
+  overflow-x: auto;
+  margin: 16px 0 24px;
+}
+
+.viden-side table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.viden-side th,
+.viden-side td {
+  padding: 12px 16px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(30, 69, 48, 0.25);
+}
+
+.viden-side thead th {
+  background: var(--primary);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 400;
+}
+
+.viden-side tbody th {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  color: var(--dark);
+}
+
+.viden-side tr:last-child td,
+.viden-side tr:last-child th {
+  border-bottom: none;
+}
+
+.ristning-lys    { border-left: 8px solid #b88552; }
+.ristning-medium { border-left: 8px solid #7a4a28; }
+.ristning-moerk  { border-left: 8px solid #3a2214; }
+
+.handling {
+  font-weight: 700;
+  color: var(--dark);
+  white-space: nowrap;
+}
+
+.viden-side .info-box {
+  margin: 24px 0;
+}
+
+/* Tjekliste (godt espresso-shot) */
+.tjekliste {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 16px;
+  margin: 16px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tjekliste li {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius);
+}
+
+.tjekliste strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 1.3em;
+  color: var(--dark);
+}
+
+/* Temperatur (mælk) */
+.temperatur {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin: 8px 0 16px;
+}
+
+.temperatur-tal {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 2.4em;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+/* Kop-illustrationer (drikkene forklaret) */
+:root {
+  --espresso: #3b2416;
+  --maelk: #efe3cc;
+  --skum: #fffaf0;
+  --vand: #b7cfd2;
+}
+
+.forklaring {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9em;
+}
+
+.forklaring li::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+  vertical-align: -2px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background: var(--farve);
+}
+
+.kopper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 32px 24px;
+  margin: 32px 0;
+  padding: 0;
+  list-style: none;
+  align-items: start;
+}
+
+/* Første række er en fast "hylde" på højde med den største kop,
+   så alle kopper står på samme linje uanset tekstens længde */
+.kop {
+  display: grid;
+  grid-template-rows: 202px auto auto;
+  text-align: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Lagene stables nedefra (column-reverse) */
+.kop-glas {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 110px;
+  height: 160px;
+  align-self: end;
+  margin: 0 auto 12px;
+  overflow: hidden;
+  border: 3px solid var(--dark);
+  border-top: none;
+  border-radius: 0 0 28px 28px;
+  background: rgba(255, 255, 255, 0.12);
+  transition: transform 0.15s ease;
+}
+
+.kop-glas.lille  { width: 70px;  height: 80px;  border-radius: 0 0 20px 20px; }
+.kop-glas.mellem { width: 90px;  height: 120px; }
+.kop-glas.stor   { width: 120px; height: 190px; }
+
+.kop:hover .kop-glas,
+.kop:focus-visible .kop-glas {
+  transform: translateY(-4px);
+}
+
+.kop:hover h3 {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.kop:focus-visible {
+  outline: 3px solid var(--white);
+  outline-offset: 3px;
+  border-radius: var(--radius);
+}
+
+/* Højden på hvert lag sættes i HTML med style="--h: 30%" */
+.lag { height: var(--h); }
+.lag.espresso { background: var(--espresso); }
+.lag.maelk    { background: var(--maelk); }
+.lag.skum     { background: var(--skum); }
+.lag.vand     { background: var(--vand); }
+
+.kop h3 { margin: 0; }
+.kop p  { margin: 4px 0 0; font-size: 0.85em; }

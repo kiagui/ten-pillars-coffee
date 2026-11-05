@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300;400;900&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,700;1,6..12,400&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/menu.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -20,7 +21,19 @@
           <ul class="nav">
             <li><a href="index.html">Forside</a></li>
             <li><a href="guides.html">Guides</a></li>
-            <li><a href="viden.html" aria-current="page">Viden</a></li>
+            <li class="har-undermenu">
+              <details>
+                <summary class="aktiv">Viden</summary>
+                <ul class="undermenu">
+                  <li><a href="viden.html" aria-current="page">Oversigt</a></li>
+                  <li><a href="kaffens-historie.html">Kaffens historie</a></li>
+                  <li><a href="boenner.html">Bønner og ristning</a></li>
+                  <li><a href="espresso-kalibrering.html">Espresso og kalibrering</a></li>
+                  <li><a href="maelk-smagning.html">Mælk og smag</a></li>
+                  <li><a href="drikkene.html">Drikkene forklaret</a></li>
+                </ul>
+              </details>
+            </li>
             <li><a href="rengoring.html">Rengøring</a></li>
           </ul>
         </nav>
@@ -30,22 +43,35 @@
 
     <main>
       <h2 class="page-title">Alt du skal vide om kaffe</h2>
-      <div class="two-col">
-        <section>
-          <h3>Hvad er kaffe?</h3>
-          <p>
-            Kaffe er en drik, der brygges af frøene fra kaffebær. Frøene kaldes kaffebønner. Efter de er høstet, bliver de behandlet, tørret og ristet. Ristningen udvikler meget af den duft og smag, vi forbinder med kaffe. Når bønnerne males, altså
-            når de kværnes af en kaffekværn til partikler, og vand løber gennem den malede kaffe, trækker vandet blandt andet smagsstoffer, olier og koffein ud.
-          </p>
-          <p>Kaffens endelige smag afhænger også af, hvor bønnerne er dyrket, hvordan de er behandlet og ristet, hvor fint de males, og hvordan kaffen brygges.</p>
-          <p>Espresso er en bryggemetode, hvor varmt vand presses gennem fintmalet kaffe under tryk.</p>
-        </section>
-        <section>
-          <h3>Arabica og robusta</h3>
-          <p><strong>Arabica</strong> har ofte en mere nuanceret smag med frugtige, blomstrede eller søde noter. Den indeholder typisk mindre koffein end robusta.</p>
-          <p><strong>Robusta</strong> har typisk en kraftigere og mere bitter smag. Den indeholder mere koffein og kan give espresso en fyldigere crema, altså det gyldenbrune skum på toppen.</p>
-        </section>
-      </div>
+<p> Du behøver ikke være barista for at lave god kaffe i Ten Pillars. Men det hjælper at forstå, hvad der sker i koppen. Her kan du læse om, hvor kaffen kommer fra, hvad der gør en espresso god, og hvorfor mælken opfører sig, som den gør. Vil du i gang med en bestemt drik, så find den under Guides.</p>
+
+<section class="viden-kort">
+  <a href="kaffens-historie.html" class="kort">
+    <img src="img/historie.svg" alt="">
+    <h3>Kaffens historie</h3>
+    <p>Fra geder i Etiopien til espressomaskiner i Italien.</p>
+  </a>
+  <a href="boenner.html" class="kort">
+    <img src="img/boenner.svg" alt="">
+    <h3>Bønner og ristning</h3>
+    <p>Hvad er en kaffebønne, og hvad betyder ristningen for smagen?</p>
+  </a>
+<a href="espresso-kalibrering.html" class="kort">
+  <img src="img/espresso-kali.svg" alt="">
+  <h3>Espresso og kalibrering</h3>
+  <p>Sådan kender du et godt shot, og sådan retter du et dårligt.</p>
+</a>
+<a href="maelk-smagning.html" class="kort">
+  <img src="img/maelk.svg" alt="">
+  <h3>Mælk og smag</h3>
+<p>Hvorfor mælk gør kaffen sødere, og hvordan kaffe og mælk passer sammen.</p>
+</a>
+<a href="drikkene.html" class="kort"> 
+  <img src="img/drikkene.svg" alt="">
+  <h3>Drikkene forklaret</h3>
+  <p>Forskellen på cortado, cappuccino, latte og de andre.</p>
+</a>
+</section>
     </main>
 
     <footer class="site-footer">Ten Pillars Coffee · Håndbog for frivillige. Er du i tvivl, så spørg en anden frivillig.</footer>
