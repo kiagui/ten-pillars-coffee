@@ -930,3 +930,12 @@ main {
 
 .kop h3 { margin: 0; }
 .kop p  { margin: 4px 0 0; font-size: 0.85em; }
+
+/* ---------- Sidetitel ----------
+   Sidens titel er en <h1> (for skærmlæsere og søgemaskiner),
+   men ser ud som en <h2>. Forsidens store <h1> påvirkes ikke. */
+h1.page-title {
+  font-weight: 400;
+  font-size: clamp(28px, 3vw, 36px);
+  color: var(--dark);
+}
