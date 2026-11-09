@@ -556,6 +556,7 @@ main {
 
 .nav summary::-webkit-details-marker {
   display: none; /* fjerner trekanten i Chrome og Safari */
+
 }
 
 .nav summary:hover,
@@ -780,9 +781,15 @@ main {
   border-bottom: none;
 }
 
-.ristning-lys    { border-left: 8px solid #b88552; }
-.ristning-medium { border-left: 8px solid #7a4a28; }
-.ristning-moerk  { border-left: 8px solid #3a2214; }
+.ristning-lys {
+  border-left: 8px solid #b88552;
+}
+.ristning-medium {
+  border-left: 8px solid #7a4a28;
+}
+.ristning-moerk {
+  border-left: 8px solid #3a2214;
+}
 
 .handling {
   font-weight: 700;
@@ -901,9 +908,19 @@ main {
   transition: transform 0.15s ease;
 }
 
-.kop-glas.lille  { width: 70px;  height: 80px;  border-radius: 0 0 20px 20px; }
-.kop-glas.mellem { width: 90px;  height: 120px; }
-.kop-glas.stor   { width: 120px; height: 190px; }
+.kop-glas.lille {
+  width: 70px;
+  height: 80px;
+  border-radius: 0 0 20px 20px;
+}
+.kop-glas.mellem {
+  width: 90px;
+  height: 120px;
+}
+.kop-glas.stor {
+  width: 120px;
+  height: 190px;
+}
 
 .kop:hover .kop-glas,
 .kop:focus-visible .kop-glas {
@@ -922,14 +939,29 @@ main {
 }
 
 /* Højden på hvert lag sættes i HTML med style="--h: 30%" */
-.lag { height: var(--h); }
-.lag.espresso { background: var(--espresso); }
-.lag.maelk    { background: var(--maelk); }
-.lag.skum     { background: var(--skum); }
-.lag.vand     { background: var(--vand); }
+.lag {
+  height: var(--h);
+}
+.lag.espresso {
+  background: var(--espresso);
+}
+.lag.maelk {
+  background: var(--maelk);
+}
+.lag.skum {
+  background: var(--skum);
+}
+.lag.vand {
+  background: var(--vand);
+}
 
-.kop h3 { margin: 0; }
-.kop p  { margin: 4px 0 0; font-size: 0.85em; }
+.kop h3 {
+  margin: 0;
+}
+.kop p {
+  margin: 4px 0 0;
+  font-size: 0.85em;
+}
 
 /* ---------- Sidetitel ----------
    Sidens titel er en <h1> (for skærmlæsere og søgemaskiner),
