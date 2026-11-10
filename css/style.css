@@ -556,7 +556,6 @@ main {
 
 .nav summary::-webkit-details-marker {
   display: none; /* fjerner trekanten i Chrome og Safari */
-
 }
 
 .nav summary:hover,
